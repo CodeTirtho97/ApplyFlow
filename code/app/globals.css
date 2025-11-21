@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+/* Light Mode - Vibrant & Professional */
+:root {
+  --radius: 0.5rem;
+
+  /* Primary Colors - Vibrant Blue */
+  --primary: rgb(59 130 246); /* #3b82f6 - Vibrant Blue */
+  --primary-foreground: rgb(255 255 255);
+
+  /* Secondary Colors - Fresh Green */
+  --secondary: rgb(16 185 129); /* #10b981 - Fresh Green */
+  --secondary-foreground: rgb(255 255 255);
+
+  /* Accent Colors - Soft Purple/Indigo */
+  --accent: rgb(238 242 255); /* #eef2ff - Soft indigo background */
+  --accent-foreground: rgb(55 65 81); /* #374151 */
+  --accent-orange: rgb(249 115 22); /* #f97316 - Vibrant Orange */
+  --accent-orange-foreground: rgb(255 255 255);
+
+  /* Error/Destructive - Vibrant Red */
+  --destructive: rgb(239 68 68); /* #ef4444 - Vibrant Red */
+  --destructive-foreground: rgb(255 255 255);
+
+  /* Background & Surfaces - Soft gradient feel */
+  --background: rgb(249 250 251); /* #f9fafb - Soft gray background */
+  --foreground: rgb(17 24 39); /* #111827 - Text Primary */
+
+  --card: rgb(255 255 255); /* #ffffff - White cards for contrast */
+  --card-foreground: rgb(17 24 39);
+
+  --popover: rgb(255 255 255);
+  --popover-foreground: rgb(17 24 39);
+
+  /* Muted/Secondary Text */
+  --muted: rgb(243 244 246); /* #f3f4f6 - Lighter muted bg */
+  --muted-foreground: rgb(107 114 128); /* #6b7280 - Text Secondary */
+
+  /* Borders & Inputs - Softer, more visible */
+  --border: rgb(209 213 219); /* #d1d5db - More visible border */
+  --input: rgb(229 231 235); /* #e5e7eb */
+  --ring: rgb(59 130 246); /* Matches primary */
+
+  /* Chart Colors - Vibrant palette */
+  --chart-1: rgb(59 130 246); /* Vibrant Blue */
+  --chart-2: rgb(16 185 129); /* Fresh Green */
+  --chart-3: rgb(249 115 22); /* Vibrant Orange */
+  --chart-4: rgb(168 85 247); /* Purple */
+  --chart-5: rgb(236 72 153); /* Pink */
+}
+
+/* Dark Mode - Deep & Professional */
+.dark {
+  /* Primary Colors */
+  --primary: rgb(59 130 246); /* #3b82f6 - Brighter Blue */
+  --primary-foreground: rgb(241 245 249);
+
+  /* Secondary Colors */
+  --secondary: rgb(52 211 153); /* #34d399 - Brighter Green */
+  --secondary-foreground: rgb(15 23 42);
+
+  /* Accent Colors - Using subtle slate for UI, keeping orange available */
+  --accent: rgb(51 65 85); /* #334155 - Slate for hover states */
+  --accent-foreground: rgb(241 245 249);
+  --accent-orange: rgb(251 191 36); /* #fbbf24 - Brighter Orange for highlights */
+  --accent-orange-foreground: rgb(15 23 42);
+
+  /* Error/Destructive */
+  --destructive: rgb(248 113 113); /* #f87171 - Softer Red */
+  --destructive-foreground: rgb(241 245 249);
+
+  /* Background & Surfaces */
+  --background: rgb(15 23 42); /* #0f172a - Deep Navy */
+  --foreground: rgb(241 245 249); /* #f1f5f9 - Text Primary */
+
+  --card: rgb(30 41 59); /* #1e293b - Slate Surface */
+  --card-foreground: rgb(241 245 249);
+
+  --popover: rgb(30 41 59);
+  --popover-foreground: rgb(241 245 249);
+
+  /* Muted/Secondary Text */
+  --muted: rgb(30 41 59); /* #1e293b */
+  --muted-foreground: rgb(203 213 225); /* #cbd5e1 - Text Secondary */
+
+  /* Borders & Inputs */
+  --border: rgb(51 65 85); /* #334155 */
+  --input: rgb(51 65 85);
+  --ring: rgb(59 130 246); /* Matches primary */
+
+  /* Chart Colors - Brighter for dark mode */
+  --chart-1: rgb(59 130 246); /* Brighter Blue */
+  --chart-2: rgb(52 211 153); /* Brighter Green */
+  --chart-3: rgb(251 191 36); /* Brighter Orange */
+  --chart-4: rgb(192 132 252); /* Lighter Purple */
+  --chart-5: rgb(244 114 182); /* Lighter Pink */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  /* Typography Base Styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+
+  /* Interactive Elements */
+  a, button {
+    @apply cursor-pointer;
+  }
+
+  /* Consistent Spacing Grid - 4px/8px based */
+  .space-section {
+    @apply py-16 lg:py-24;
+  }
+
+  .space-content {
+    @apply space-y-8;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+}
