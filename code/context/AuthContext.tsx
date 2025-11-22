@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import type { User } from "@supabase/supabase-js";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createClient } from "@/lib/supabase/client";
 
 // ============================================
 // 📝 TYPE DEFINITIONS
@@ -36,7 +36,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   // Create Supabase client
-  const supabase = createClientComponentClient();
+  const supabase = createClient();
 
   // ============================================
   // 🔄 FUNCTION: Refresh User Data
