@@ -37,12 +37,12 @@ import {
 } from 'date-fns'
 import { cn } from '@/lib/utils'
 
-const eventTypeColors = {
+const eventTypeColors: Record<string, string> = {
   interview: 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20',
   'referral-followup': 'bg-purple-500/10 text-purple-700 dark:text-purple-400 border-purple-500/20',
 }
 
-const statusColors = {
+const statusColors: Record<string, string> = {
   Scheduled: 'bg-blue-500/10 text-blue-700 dark:text-blue-400',
   Completed: 'bg-green-500/10 text-green-700 dark:text-green-400',
   Cancelled: 'bg-red-500/10 text-red-700 dark:text-red-400',
