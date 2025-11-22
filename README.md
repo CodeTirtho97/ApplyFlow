@@ -4,6 +4,9 @@
 
 A modern, full-stack web application designed to help job seekers organize their application process, manage referrals, track interviews, and gain actionable insights into their job search journey.
 
+<img width="1903" height="965" alt="image" src="https://github.com/user-attachments/assets/6fa63a16-1e19-4d3c-b7b1-249f7e124f5d" />
+
+
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
@@ -11,7 +14,7 @@ A modern, full-stack web application designed to help job seekers organize their
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38bdf8)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Live Demo](https://applyflow.vercel.app) • [Features](#-features) • [Tech Stack](#%EF%B8%8F-tech-stack) • [Getting Started](#-getting-started) • [Screenshots](#-screenshots)
+[Live Demo](https://apply-flow-tracker.vercel.app/) • [Features](#-features) • [Tech Stack](#%EF%B8%8F-tech-stack) • [Getting Started](#-getting-started) • [Screenshots](#-screenshots)
 
 ---
 
@@ -396,20 +399,29 @@ Design Principles:
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard Overview](screenshots/dashboard.png)
+<img width="1897" height="1037" alt="image" src="https://github.com/user-attachments/assets/89dd575d-2bb7-4c8f-905f-1179b1a1ba19" />
+
 *Clean, modern dashboard with key metrics, charts, and recent activity at a glance*
 
 ### Application Tracking
-![Application Management](screenshots/applications.png)
+<img width="1918" height="973" alt="image" src="https://github.com/user-attachments/assets/fe545373-63f6-4260-828b-ced9b25ae04b" />
+
+*Tabular board for managing applications across different stages*
+
+
+<img width="1918" height="977" alt="image" src="https://github.com/user-attachments/assets/77feaf6d-601a-4ce3-b02a-ea7cb01f7de4" />
+
 *Kanban-style board for managing applications across different stages*
 
 ### Analytics
-![Analytics Dashboard](screenshots/analytics.png)
+<img width="1896" height="981" alt="image" src="https://github.com/user-attachments/assets/a1289813-eb93-4863-a5c5-fe22e78650d9" />
+
 *Comprehensive analytics with charts, graphs, and actionable insights*
 
-### Dark Mode
-![Dark Mode](screenshots/dark-mode.png)
-*Beautiful dark mode with smooth transitions and eye-friendly colors*
+### Calendar View
+<img width="1902" height="1036" alt="image" src="https://github.com/user-attachments/assets/f248d1b6-fee5-4fd1-9fe8-b7852d47b6a0" />
+
+*Intuitive calendar view available for first-glance understanding*
 
 ---
 
@@ -566,28 +578,28 @@ copies or substantial portions of the Software.
 
 - GitHub: [@CodeTirtho97](https://github.com/CodeTirtho97)
 - LinkedIn: [Tirthoraj Bhattacharya](https://linkedin.com/in/tirthoraj-bhattacharya)
-- Email: [your-email@example.com](mailto:your-email@example.com)
+<!-- - Email: [your-email@example.com](mailto:your-email@example.com) -->
 
 ---
 
-## 🙏 Acknowledgments
+<!-- ## 🙏 Acknowledgments
 
 - **Design Inspiration**: [Linear](https://linear.app), [Vercel](https://vercel.com), and [Notion](https://notion.so)
 - **Component Library**: [shadcn/ui](https://ui.shadcn.com/) by [@shadcn](https://twitter.com/shadcn)
 - **Icons**: [Lucide Icons](https://lucide.dev/)
 - **Backend**: [Supabase](https://supabase.com/) team for the amazing BaaS platform
-- **Academic**: Built as part of M.Tech Software Engineering coursework at IIIT Allahabad
+- **Academic**: Built as part of M.Tech Software Engineering coursework at IIIT Allahabad -->
 
----
+<!-- --- -->
 
-## 📞 Support
+<!-- ## 📞 Support -->
 
-### Getting Help
+<!-- ### Getting Help
 
 - 📖 Check the [Documentation](docs/)
 - 💬 Open an [Issue](https://github.com/CodeTirtho97/applyflow/issues)
 - 📧 Email: support@applyflow.com
-- 💼 LinkedIn: [Connect with me](https://linkedin.com/in/tirthoraj-bhattacharya)
+- 💼 LinkedIn: [Connect with me](https://linkedin.com/in/tirthoraj-bhattacharya) -->
 
 ### FAQ
 
@@ -618,7 +630,7 @@ If this project helped you in your job search or taught you something new, pleas
 
 ---
 
-## 🗺️ Roadmap
+<!-- ## 🗺️ Roadmap
 
 ### Upcoming Features
 
@@ -644,7 +656,7 @@ If this project helped you in your job search or taught you something new, pleas
 - [x] Real-time updates
 - [x] Mobile responsive design
 
----
+--- -->
 
 **Built with passion for job seekers everywhere** ❤️
 

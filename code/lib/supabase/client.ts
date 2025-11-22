@@ -14,6 +14,3 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 export function createClient() {
   return createBrowserClient<Database>(supabaseUrl, supabaseAnonKey)
 }
-
-// Legacy export for backwards compatibility
-export const supabase = createBrowserClient<Database>(supabaseUrl, supabaseAnonKey)
