@@ -1,6 +1,7 @@
 // Server-side dashboard query functions
 import { createClient } from '@/lib/supabase/server'
 import type { ActivityItem } from '@/components/dashboard/RecentActivity'
+import type { Application, Referral, Resume, Interview } from '@/types/database.types'
 
 export async function getDashboardStats() {
   const supabase = await createClient()
@@ -14,10 +15,10 @@ export async function getDashboardStats() {
       supabase.from('interviews').select('*'),
     ])
 
-  const applications = applicationsRes.data || []
-  const referrals = referralsRes.data || []
-  const resumes = resumesRes.data || []
-  const interviews = interviewsRes.data || []
+  const applications = (applicationsRes.data || []) as Application[]
+  const referrals = (referralsRes.data || []) as Referral[]
+  const resumes = (resumesRes.data || []) as Resume[]
+  const interviews = (interviewsRes.data || []) as Interview[]
 
   // Calculate application stats
   const interviewCount = applications.filter((a) => a.status === 'Interview').length
@@ -111,7 +112,7 @@ export async function getRecentActivity(): Promise<ActivityItem[]> {
   }
 
   // Map database activities to ActivityItem format
-  const activities: ActivityItem[] = (activitiesData || []).map((activity) => {
+  const activities: ActivityItem[] = ((activitiesData || []) as any[]).map((activity) => {
     let title = ''
     let description = activity.description || ''
 

@@ -41,7 +41,7 @@ export async function logActivity({
       return { error: 'User not authenticated' }
     }
 
-    const { error } = await supabase.from('activities').insert({
+    const { error } = await (supabase.from('activities') as any).insert({
       user_id: user.id,
       activity_type: activityType,
       action,

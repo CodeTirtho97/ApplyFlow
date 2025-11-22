@@ -116,8 +116,8 @@ export async function createApplication(
 
   if (!userId) throw new Error('User not authenticated');
 
-  const { data, error } = await supabase
-    .from('applications')
+  const { data, error } = await (supabase
+    .from('applications') as any)
     .insert({ ...application, user_id: userId })
     .select()
     .single();
@@ -134,8 +134,8 @@ export async function updateApplication(
   updates: ApplicationUpdate
 ): Promise<Application> {
   const supabase = createClient();
-  const { data, error } = await supabase
-    .from('applications')
+  const { data, error } = await (supabase
+    .from('applications') as any)
     .update(updates)
     .eq('id', id)
     .select()
@@ -214,8 +214,8 @@ export async function createReferral(referral: ReferralInsert): Promise<Referral
 
   if (!userId) throw new Error('User not authenticated');
 
-  const { data, error } = await supabase
-    .from('referrals')
+  const { data, error } = await (supabase
+    .from('referrals') as any)
     .insert({ ...referral, user_id: userId })
     .select()
     .single();
@@ -232,8 +232,8 @@ export async function updateReferral(
   updates: ReferralUpdate
 ): Promise<Referral> {
   const supabase = createClient();
-  const { data, error } = await supabase
-    .from('referrals')
+  const { data, error } = await (supabase
+    .from('referrals') as any)
     .update(updates)
     .eq('id', id)
     .select()
@@ -310,8 +310,8 @@ export async function createResume(resume: ResumeInsert): Promise<Resume> {
 
   if (!userId) throw new Error('User not authenticated');
 
-  const { data, error } = await supabase
-    .from('resumes')
+  const { data, error } = await (supabase
+    .from('resumes') as any)
     .insert({ ...resume, user_id: userId })
     .select()
     .single();
@@ -325,8 +325,8 @@ export async function createResume(resume: ResumeInsert): Promise<Resume> {
  */
 export async function updateResume(id: string, updates: ResumeUpdate): Promise<Resume> {
   const supabase = createClient();
-  const { data, error } = await supabase
-    .from('resumes')
+  const { data, error } = await (supabase
+    .from('resumes') as any)
     .update(updates)
     .eq('id', id)
     .select()
@@ -390,8 +390,8 @@ export async function createInterview(interview: InterviewInsert): Promise<Inter
 
   if (!userId) throw new Error('User not authenticated');
 
-  const { data, error } = await supabase
-    .from('interviews')
+  const { data, error } = await (supabase
+    .from('interviews') as any)
     .insert({ ...interview, user_id: userId })
     .select()
     .single();
@@ -408,8 +408,8 @@ export async function updateInterview(
   updates: InterviewUpdate
 ): Promise<Interview> {
   const supabase = createClient();
-  const { data, error } = await supabase
-    .from('interviews')
+  const { data, error } = await (supabase
+    .from('interviews') as any)
     .update(updates)
     .eq('id', id)
     .select()
@@ -463,8 +463,8 @@ export async function updateUserPreferences(
 
   if (!userId) throw new Error('User not authenticated');
 
-  const { data, error } = await supabase
-    .from('user_preferences')
+  const { data, error } = await (supabase
+    .from('user_preferences') as any)
     .update(updates)
     .eq('user_id', userId)
     .select()

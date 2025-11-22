@@ -11,7 +11,7 @@ import { Separator } from '@/components/ui/separator'
 import { useToast } from '@/hooks/use-toast'
 import { User, Bell, Palette, Database, Shield, Mail } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import type { UserPreferences } from '@/types/database.types'
+import type { UserPreferences, UserPreferencesInsert } from '@/types/database.types'
 
 export default function SettingsClient() {
   const { user } = useAuth()
@@ -55,16 +55,16 @@ export default function SettingsClient() {
         setPreferences(data)
       } else {
         // Create default preferences
-        const defaultPrefs = {
+        const defaultPrefs: UserPreferencesInsert = {
           user_id: user!.id,
           email_notifications: true,
           telegram_notifications: false,
           telegram_chat_id: null,
-          user_email: user!.email,
+          user_email: user!.email ?? null,
         }
 
-        const { data: newPrefs, error: createError } = await supabase
-          .from('user_preferences')
+        const { data: newPrefs, error: createError } = await (supabase
+          .from('user_preferences') as any)
           .insert(defaultPrefs)
           .select()
           .single()
@@ -88,8 +88,8 @@ export default function SettingsClient() {
     setSaving(true)
     try {
       const supabase = createClient()
-      const { error } = await supabase
-        .from('user_preferences')
+      const { error } = await (supabase
+        .from('user_preferences') as any)
         .update({
           email_notifications: preferences.email_notifications,
           telegram_notifications: preferences.telegram_notifications,

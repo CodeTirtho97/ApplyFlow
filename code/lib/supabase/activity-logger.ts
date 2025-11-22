@@ -26,7 +26,7 @@ export async function logActivity({
   try {
     const supabase = createClient()
 
-    const { error } = await supabase.from('activities').insert({
+    const { error } = await (supabase.from('activities') as any).insert({
       activity_type: activityType,
       action,
       entity_id: entityId,

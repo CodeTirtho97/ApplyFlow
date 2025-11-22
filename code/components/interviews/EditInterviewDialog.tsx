@@ -188,7 +188,7 @@ export default function EditInterviewDialog({
             <Select
               name="status"
               defaultValue={interview.status}
-              onValueChange={setStatus}
+              onValueChange={(value) => setStatus(value as typeof interview.status)}
               required
             >
               <SelectTrigger>
